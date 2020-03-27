@@ -1,10 +1,18 @@
 import React from "react";
+import {BrowserRouter, Route, Link} from "react-router-dom";
+import Home from './Home'
+import Form from './Form'
 
 const App = () => {
   return (
     <>
-      <h1>Lambda Eats</h1>
-      <p>You can remove this code and create your own header</p>
+      <div className="App">
+        <h1>Lambda Eats</h1>
+        <BrowserRouter>
+          <Route exact path ="/" component={Home}/>
+        </BrowserRouter>
+        <Form/>
+      </div>
     </>
   );
 };
