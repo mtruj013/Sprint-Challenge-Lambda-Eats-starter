@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter, Route, Link} from "react-router-dom";
+import { Switch, Route, Link } from "react-router-dom";
 import Home from './Home'
 import Form from './Form'
 
@@ -7,11 +7,17 @@ const App = () => {
   return (
     <>
       <div className="App">
-        <h1>Lambda Eats</h1>
-        <BrowserRouter>
-          <Route exact path ="/" component={Home}/>
-        </BrowserRouter>
-        <Form/>
+        <nav>
+          <h1>Lambda Eats</h1>
+          <div>
+            <Link to="/">Home</Link>
+            <Link to="/pizza">Order</Link>
+          </div>
+        </nav>
+        <Switch>
+          <Route path = "/pizza"><Form/></Route>
+          <Route path = "/"><Home/></Route>
+        </Switch>
       </div>
     </>
   );
